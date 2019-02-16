@@ -4,7 +4,39 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Portfolio</title>
-	<link rel="stylesheet" href="css/style.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			background-color: black;
+			color: white;
+			justify-content: center;
+			align-items: center;
+		}
+
+		ul {
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+			flex: 1;
+		}
+		
+		li {
+			list-style: none;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+		}
+
+	</style>
 </head>
 <body>
 	<ul>
@@ -15,6 +47,5 @@
 			<a href="forecast/">FORECAST</a>
 		</li>
 	</ul>
-	<script src="js/script.js"></script>
 </body>
 </html>
