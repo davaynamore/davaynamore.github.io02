@@ -1,4 +1,126 @@
+/*#3B3F45 bg*/
+/*#4A4F56 header*/
+/*#88839e odd*/
+/*#7a7593 even*/
+/*#eb7e7f active*/
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url("../fonts/OpenSans-Bold.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url("../fonts/OpenSans-Regular.ttf") format("ttf");
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
 body {
-	background-color: black;
+	font-size: 100%;
 	color: white;
+	background-color: #3B3F45;
+	font-family: 'Open Sans Regular', sans-serif;
+}
+
+.bold {
+	font-family: 'Open Sans Bold', sans-serif;
+}
+
+.main_header {
+	padding: 20px 0;
+	background-color: #4A4F56;
+	color: #eb7e7f;
+	margin-bottom: 1rem;
+}
+
+.main_header > * {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.dinner__form {
+	max-width: 50%;
+	margin: auto;
+}
+
+.dinner__list {
+	margin-bottom: 1rem;
+}
+
+.dinner__item {
+	list-style: none;
+}
+
+.dinner__item:nth-child(even) .dinner__label {
+	background-color: #7a7593;
+}
+
+.dinner__item:nth-child(odd) .dinner__label {
+	background-color: #88839e;
+}
+
+.dinner__label {
+	min-height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	border: 2px solid transparent;
+	border-left: none;
+	border-right: none;
+	display: inline-block;
+	width: 100%;
+	padding-left: 13px;
+}
+
+.dinner__label > * {
+	vertical-align: middle;
+}
+
+.dinner__item .dinner__label:hover {
+	background-color: #625e77;
+	border-color: white;
+}
+
+.dinner__item .dinner__label:active {
+	background-color: #eb7e7f;
+}
+
+[type="checkbox"] {
+	margin-right: .5rem;
+}
+
+[type="checkbox"]:checked ~ * {
+	text-decoration: line-through;
+}
+
+.dinner__item span {
+	margin-right: .5rem
+}
+
+.dinner__item em {
+	font-size: .8rem;
+}
+
+.dinner_submit {
+	width: 100%;
+	padding: 15px 0;
+	background-color: #4A4F56;
+	color: #eb7e7f;
+	font-size: 1.5rem;
+	border: none;
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+
+.dinner_submit:hover {
+	background-color: #3B3F45;	
+	border-color: #eb7e7f;
 }

@@ -1,0 +1,159 @@
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html,
+body
+{
+    height: 100%;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+
+    margin-top: 2rem; 
+
+    color: #c2c2c2;
+}
+
+ul > li > a
+{
+    text-decoration: none;
+
+    color: #c2c2c2; 
+    background-color: rgba(118, 117, 128, .05);
+}
+ul > li > a:hover
+{
+    color: #ec5a62;
+    background-color: rgba(118, 117, 128, .1);
+}
+
+::-webkit-input-placeholder
+{
+    color: #c2c2c2;
+}
+
+::-moz-placeholder
+{
+    color: #c2c2c2;
+}
+
+:-ms-input-placeholder
+{
+    color: #c2c2c2;
+}
+
+:-moz-placeholder
+{
+    color: #c2c2c2;
+}
+
+.container
+{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.search-form
+{
+    font-size: 0;
+
+    margin-bottom: 2rem;
+}
+.search-form > *
+{
+    font-size: 6rem;
+
+    display: inline-block;
+
+    border: none;
+    outline: none; 
+    background-color: transparent;
+}
+.search-form [type='search']
+{
+    font-weight: bold;
+
+    width: calc(100% - 116px);
+
+    color: #ec5a62;
+}
+.search-form [type='submit']
+{
+    width: 116px;
+    height: 116px;
+
+    cursor: pointer; 
+
+    background-image: url('../img/search.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+
+.table__title
+{
+    font-size: 1.5rem;
+    font-weight: 900; 
+
+    margin-bottom: 1rem;
+
+    text-transform: uppercase;
+}
+
+.table__item
+{
+    display: inline-block;
+
+    min-width: 31%; 
+    margin-right: 2rem;
+}
+.table__item:last-child
+{
+    margin-right: 0;
+}
+.table__item:first-child .list__img
+{
+    border-radius: 50%;
+}
+
+.list__item
+{
+    margin-bottom: .5rem;
+}
+.list__item:last-child
+{
+    margin-bottom: 0;
+}
+
+.list__link
+{
+    line-height: 83px; 
+
+    display: block;
+
+    min-height: 83px;
+    padding-left: 15px;
+
+    border-radius: 5px;
+}
+.list__link > *
+{
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.list__img
+{
+    margin-right: .5rem;
+}
+.list__img + *
+{
+    font-weight: bold;
+}

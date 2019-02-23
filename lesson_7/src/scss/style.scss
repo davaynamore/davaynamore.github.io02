@@ -1,0 +1,143 @@
+// Шрифт: Шрифт: Arial, sans-serif
+// Цвета:
+// Цвет текста в поиске и ссылки при наведении #ec5a62;
+// Цвет текста и placeholder’a #c2c2c2
+// Фон ссылки rgba(118,117,128,0.05)
+// Фон ссылки при наведении rgba(118,117,128,0.1)
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: #c2c2c2;
+	margin-top: 2rem;
+}
+
+ul > li > a {
+	background-color: rgba(118,117,128,0.05);
+	text-decoration: none;
+	color: #c2c2c2;
+
+	&:hover {
+		color: #ec5a62;
+		background-color: rgba(118,117,128,0.1);
+	}
+}
+
+::-webkit-input-placeholder {
+	color: #c2c2c2;
+}
+::-moz-placeholder {
+	color: #c2c2c2;
+}
+:-ms-input-placeholder{
+	color: #c2c2c2;
+}
+:-moz-placeholder {
+	color: #c2c2c2;
+}
+
+.container {
+	max-width: 1140px;
+	margin: auto;
+}
+
+.search-form {
+	font-size: 0;
+	margin-bottom: 2rem;
+	
+	& > * {
+		display: inline-block;
+		font-size: 6rem;
+		border: none;
+		background-color: transparent;
+		outline: none;
+	}
+
+	[type="search"]	{	
+		width: calc(100% - 116px);
+		font-weight: bold;
+		color: #ec5a62;
+	}
+
+	[type="submit"]	{
+		width: 116px;
+		height: 116px;
+		background-image: url('../img/search.svg');
+		background-size: 70%;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+	}
+}
+
+.table {
+
+	&__title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		font-weight: 900;
+	}
+
+	&__list {
+
+	}
+
+	&__item {
+		display: inline-block;
+		margin-right: 2rem;
+		min-width: 31%;
+
+		&:last-child {
+			margin-right: 0;			
+		}
+
+		&:first-child {
+
+			& .list__img {
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+.list {
+
+	&__item {
+		margin-bottom: .5rem;
+
+		&:last-child {
+			margin-bottom: 0;			
+		}
+	}
+
+	&__link {
+		padding-left: 15px;
+		display: block;
+		border-radius: 5px;
+		min-height: 83px;
+		line-height: 83px;
+
+		& > * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	&__img {
+		margin-right: .5rem;
+
+		& + * {
+			font-weight: bold;
+		}
+	}
+}
