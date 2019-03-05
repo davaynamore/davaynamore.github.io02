@@ -1,0 +1,166 @@
+$main-color: #c2c2c2;
+$red-color: #ec5a62;
+
+@font-face {
+ font-family: "Open Sans Regular";
+ src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+ font-family: "Open Sans Bold";
+ src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+.h1 {
+	font-family: "Open Sans Regular", sans-serif;
+	font-family: Arial, sans-serif;
+}
+
+.p {
+	font-family: "Open Sans Bold", sans-serif;
+	font-family: Arial, sans-serif;
+}
+
+.hidden {
+	position: absolute;
+	z-index: -1;
+	transform: translate(-100%);
+	opacity: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: $main-color;
+}
+
+::-webkit-input-placeholder {
+	color: $main-color;
+}
+::-moz-placeholder {
+	color: $main-color;
+}
+:-ms-input-placeholder {
+	color: $main-color;
+}
+:-moz-placeholder {
+	color: $main-color;
+}
+
+.container {
+	width: 100%;
+	max-width: 1055px;
+	margin: auto;
+}
+
+.search {
+	padding-top: 5rem;
+	min-height: 100%;
+
+	&__form {
+		font-size: 0;
+		margin-bottom: 5rem;
+
+		$size: 130px;
+
+		& > * {
+			display: inline-block;
+			border: none;
+			background-color: transparent;
+			font-size: 7rem;
+			outline: none;
+			padding: 0;
+			min-height: $size;
+		}
+
+		[type="search"] {
+			font-weight: bold;
+			width: calc(100% - #{$size});
+			color: $red-color;
+		}
+
+		[type="submit"] {
+			width: $size;
+			height: $size;
+			background-image: url('../img/magnifier.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 60%;
+			cursor: pointer;
+		}
+	}
+}
+
+.table {
+
+	&__item {
+		width: 100%;
+		max-width: 320px;
+		margin-right: 43px;
+		display: inline-block;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:first-child{
+			.list__img {
+				border-radius: 50%;
+			}
+		}
+
+		&_title {
+			text-transform: uppercase;
+			font-weight: 900;
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.list {
+
+	&__item {
+		margin-bottom: .3rem;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		font-weight: bold;
+		min-height: 70px;
+		line-height: 70px;
+		padding-left: 10px;
+		border-radius: 6px;
+		display: block;
+		width: 100%;
+		text-decoration: none;
+		color: $main-color;
+		background-color: rgba(118,117,128,0.05);
+
+		&:hover {
+			color: $red-color;
+			background-color: rgba(118,117,128,0.1);
+		}
+
+		& > * {
+			vertical-align: middle;
+		}
+	}
+
+	&__img {
+		$size: 50px;
+		margin-right: .8rem;
+		width: 50px;
+		height: 50px;
+	}
+}
