@@ -1,5 +1,8 @@
+template
 node_modules
-*.zip
-gulpfile.js
-package.json
 package-lock.json
+*.psd
+*.zip
+src/img/**/*.*
+src/libs/**/*.*
+src/fonts/**/*.*
