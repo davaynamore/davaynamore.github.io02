@@ -339,6 +339,7 @@ body {
 	-ms-flex-align: center;
 	align-items: center;
 	min-height: 50vh;
+	padding: 70px 0;
 }
 .about::before {
 	content: "";
@@ -442,35 +443,54 @@ body {
 .contacts__textarea-label::after {
 	content: "";
 	position: absolute;
-	background-color: #3c4955;
-	border-color: #3c4955;
-	top: 0;
 }
 .contacts__label::before,
 .contacts__textarea-label::before {
+	top: 0;
 	left: 0;
 	width: 50px;
 	height: 50px;
+	background-color: #3c4955;
+	border-radius: 3px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 .contacts__label::after,
 .contacts__textarea-label::after {
 	left: 50px;
 	border: 10px solid transparent;
 	border-left-color: #3c4955;
-	background-color: transparent;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	        transform: translateY(-50%);
 }
+.contacts__label[for="1"]::before,
+.contacts__textarea-label[for="1"]::before {
+	background: #3c4955 url("../img/user.svg") no-repeat center;
+	background-size: 50%;
+}
+.contacts__label[for="2"]::before,
+.contacts__textarea-label[for="2"]::before {
+	background: #3c4955 url("../img/mail.svg") no-repeat center;
+	background-size: 50%;
+}
+.contacts__label[for="3"]::before,
+.contacts__textarea-label[for="3"]::before {
+	background: #3c4955 url("../img/crayon.svg") no-repeat center;
+	background-size: 50%;
+}
+.contacts__textarea-label[for="3"]::before {
+	background-position: center 15px;
+}
 .contacts__input {
 	width: 100%;
-	font-weight: 700;
 	min-height: 50px;
 }
 .contacts__input,
 .contacts__textarea {
 	border: 2px solid #3c4955;
 	padding-left: calc(70px);
+	font-weight: 700;
 }
 .contacts__textarea,
 .contacts [type="submit"] {
@@ -486,11 +506,33 @@ body {
 	justify-content: center;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	cursor: pointer;
+	-webkit-transition: background-color .2s ease;
+	        transition: background-color .2s ease;
+}
+.contacts [type="submit"]:hover {
+	background-color: #6ecc8f;
 }
 .contacts__input,
 .contacts__textarea,
 .contacts [type="submit"] {
 	border-radius: 3px;
+}
+.contacts__textarea-label {
+	min-height: 225px;
+	max-height: 225px;
+}
+.contacts__textarea-label::before {
+	bottom: 0;
+	height: initial;
+}
+.contacts__textarea-label::after {
+	top: 27px;
+}
+.contacts__textarea {
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
 }
 
 .footer {
