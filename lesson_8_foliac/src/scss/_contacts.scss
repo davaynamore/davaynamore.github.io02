@@ -1,0 +1,105 @@
+.contacts {
+	padding: 50px 0;
+
+	.container {
+		max-width: 700px;
+	}
+
+	.input-row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-size: 26px;
+		color: $green-color;
+		font-family: $fat-font;
+		text-align: center;
+		margin-bottom: 2.3rem;
+	}
+
+	&__form {
+
+		& > * {
+			display: flex;
+			margin-bottom: 30px;
+
+			&:last-child {
+				margin-bottom: 0;				
+			}
+		}
+	}
+
+	&__label {
+		max-width: 330px;
+	}
+
+	$input-height: 50;
+
+	&__label,
+	&__textarea-label {
+		width: 100%;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: $form-blue;
+			border-color:  $form-blue;
+			top: 0;
+		}
+
+		&::before {
+			left: 0;
+			@include square(#{$input-height}px);
+		}
+
+		&::after {
+			left: #{$input-height}px;
+			border: 10px solid transparent;
+			border-left-color: $form-blue;
+			background-color: transparent;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__input {
+		width: 100%;
+		font-weight: 700;
+		min-height: #{$input-height}px;
+	}
+
+	&__input,
+	&__textarea {
+		border: 2px solid $form-blue;
+		padding-left: calc(#{$input-height + 20}px);
+	}
+
+	&__textarea,
+	[type="submit"] {
+		width: 100%;
+	}
+
+	[type="submit"]{
+		background-color: $green-color;
+		color: $white;
+		padding: 15px 0;
+		border: none;
+		justify-content: center;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	&__input,
+	&__textarea,
+	[type="submit"] {
+		border-radius: 3px;
+	}
+
+	
+
+
+
+}

@@ -37,3 +37,8 @@
 @mixin section-padding {
 	padding: 70px 0;
 }
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
