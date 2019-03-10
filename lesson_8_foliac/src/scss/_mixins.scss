@@ -42,3 +42,13 @@
 	width: $size;
 	height: $size;
 }
+
+@mixin transition ($prop: all, $time: .2s, $func: ease) {
+	transition: $prop $time $func;
+}
+
+@mixin triangle($size, $color) {
+	display: block;
+	border: $size solid transparent;
+	border-top-color: $color;
+}
