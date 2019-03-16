@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 100%;
+	color: $text-color;
+}
+
+.container {
+	width: 100%;
+	max-width: 900px;
+	margin: auto;
+}
+
+.row {
+
+}
+
+.logo {
+
+}
+
+section:not([class="portfolio"]) {
+	padding: $section-padding;
+}
+
+.border-div {
+	@include border-div;
+	padding: 60px 0 20px;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		max-width: 30%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+	}
+
+	&::before {
+		left: 0;
+	}
+
+	&::after {
+		right: 0;
+	}
+
+	& > * {
+		max-width: 550px;
+		text-align: center;
+		margin: auto;
+	}
+
+	&__title {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		max-width: initial;
+		transform: translateY(-50%);
+		font-size: $subtitle-size;
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing;
+		font-weight: 700;
+	}
+
+	&__text {
+		line-height: 1.5;
+		margin-bottom: 20px;
+
+		&:last-child {
+			margin-bottom: 0;			
+		} 
+	}
+}
