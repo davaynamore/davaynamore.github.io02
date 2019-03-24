@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	border: none;
+	width: 100%;
+	max-width: 300px;
+	padding: 20px 0;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2rem;
+	background-image: radial-gradient(red 30%, white 31%);
+	border: 1px solid black;
+}

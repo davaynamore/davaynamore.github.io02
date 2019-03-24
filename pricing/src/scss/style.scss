@@ -72,14 +72,12 @@ body {
 			
 			&__currency-symbol {
 				top: -1.5em;
-			}
-			
+			}			
 
 			&__currency-symbol,
 			&__currency {
 				font-size: $middle-size;
-			}
-			
+			}			
 		}
 
 		.title {
@@ -156,15 +154,19 @@ body {
 			.pricing__card-header {
 				padding: 45px 0;
 			}
+
 			.pricing__card-body {
 				width: 150%;
 			}
+
 			.pricing__card-footer {
 				padding: 40px 0;
 			}
+
 			.icon {
 				margin-bottom: 50px;
 			}
+			
 			.btn {
 				background-color: $pink;
 				transform: translateY(-125%);

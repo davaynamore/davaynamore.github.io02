@@ -1,0 +1,35 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+}
+
+html,
+body {
+	min-height: 100vh;
+}
+
+body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+button {
+	border: none;
+	width: 100%;
+	max-width: 300px;
+	padding: 20px 0;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2rem;
+	background-image: radial-gradient(red 30%, white 31%);
+	border: 1px solid black;
+}

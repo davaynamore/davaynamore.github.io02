@@ -143,7 +143,8 @@ gulp.task(task.connect, () => {
 	browserSync.init({
 		server: {
 			baseDir: path.serverRoot,
-			open: true
+			open: true,
+			port: 8080
 		}
 	});
 });
