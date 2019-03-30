@@ -1,0 +1,53 @@
+@media all and (max-width: 319px) {
+	html {
+		display: none;
+	}
+}
+
+.header,
+.about,
+.portfolio,
+.contats,
+.footer {
+	display: none;
+}
+
+[class*="col"] > .div {
+	min-height: 150px;
+}
+
+.large {
+	min-height: 330px !important;
+}
+
+.light-green > .div {
+	background-color: #afdfbf;
+}
+
+.aqua > .div {
+	background-color: #68c5b8;
+}
+
+.pink > .div {
+	background-color: #fa688a;
+}
+
+.light-purple > .div {
+	background-color: #8a95ef;
+}
+
+.purple > .div {
+	background-color: #6652ad;
+}
+
+.yellow > .div {
+	background-color: #ffc569;
+}
+
+.blue > .div {
+	background-color: #588cc7;
+}
+
+.row:not(:last-child) {
+	margin-bottom: 30px;
+}

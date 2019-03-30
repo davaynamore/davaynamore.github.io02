@@ -1,0 +1,62 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	background-color: black;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	flex-direction: column;
+}
+
+	$size: 500px;
+
+.container {
+	width: 100%;
+	max-width: $size;
+}
+
+.game_table {
+	display: flex;
+	min-height: $size;
+	background-color: green;
+	border: 10px solid red;
+	margin-bottom: 2rem;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+
+.cube {
+	$size: 100px;
+	width: $size;
+	height: $size;
+	background-color: white;
+	color: black;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	width: 100%;
+
+	background-color: green;
+	color: red;
+	font-size: 2rem;
+	border: none;
+	padding: 1rem 0;
+	cursor: pointer;
+}

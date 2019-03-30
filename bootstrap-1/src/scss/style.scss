@@ -1,0 +1,42 @@
+@import "delete-before-pr";
+
+[class*="col"] > .div {
+	min-height: 150px;
+}
+
+.large {
+	min-height: 330px!important;	
+}
+
+.light-green > .div {
+	background-color: #AFDFBF;
+}
+
+.aqua > .div {
+	background-color: #68C5B8;
+}
+
+.pink > .div {
+	background-color: #FA688A;
+}
+
+.light-purple > .div {
+	background-color: #8A95EF;
+}
+
+.purple > .div {
+	background-color: #6652AD;
+}
+
+.yellow > .div {
+	background-color: #FFC569;
+}
+
+.blue > .div {
+	background-color: #588CC7;
+}
+
+.row:not(:last-child) {
+	margin-bottom: 30px;
+}
+

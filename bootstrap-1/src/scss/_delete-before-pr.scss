@@ -1,0 +1,13 @@
+@media all and (max-width: 319px) {
+	html {
+		display: none;
+	}
+}
+
+.header,
+.about,
+.portfolio,
+.contats,
+.footer {
+	display: none;
+}
