@@ -223,4 +223,44 @@
 
 // console.log(min(4, 4));
 
+// Напишите функцию в которой цикл предлагает prompt ввести число,
+// большее заданного аргумента функции (например 100). Если посетитель
+// ввёл другое число – попросить ввести ещё раз, и так далее.
+
+// Цикл должен спрашивать число пока либо посетитель не введёт число,
+// большее 100, либо не нажмёт кнопку Cancel (ESC).
+
+// Предполагается, что посетитель вводит только числа. Предусмотреть обработку
+// нечисловых строк в этой задаче
+
+
+function getNumber(){
+	return prompt('Type a number more than 100');
+}
+
+let answer, isNumber;
+
+do {
+
+	answer = getNumber();
+	isNumber = Number.isInteger(+answer); //true, false
+
+	if(!isNumber) {
+		alert("Type a number please!");
+		answer = 0;
+	}
+
+} while(+answer <= 100);
+
+alert('Thank you');
+
+
+
+
+
+
+
+
+
+
 })();

@@ -1,0 +1,51 @@
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	color: $dark-text;
+}
+
+a {
+	color: $dark-text;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;		
+	}
+}
+
+.breadcrumbs {
+	display: flex;
+	margin: 0;
+	padding: 0;
+
+	&__item {
+		list-style: none;
+
+		&::after {
+			content: "/";
+			display: inline-block;
+			margin: 0 px_to_rem(4px);
+			font-weight: 700;
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}			
+		}
+	}
+
+	&__link {
+		text-transform: uppercase;
+		font-family: $secondary-font;
+		font-weight: 700;
+
+		&:hover {
+			color: $corp-green;
+		}
+	}
+}
