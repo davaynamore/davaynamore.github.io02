@@ -57,6 +57,7 @@ a {
 	&-title {
 		@include title($section-title);
 		margin-bottom: px_to_rem(25px);
+		@include green-line(65px, 20px);
 	}
 
 	&-description {
@@ -82,8 +83,4 @@ a {
 		}
 
 	}
-}
-
-.img-wrapper {
-	@include padding-hack(65.7%);
 }

@@ -16,6 +16,7 @@
 	font-weight: 700;
 	font-size: $size;
 	text-transform: uppercase;
+	position: relative;
 }
 
 @mixin padding-hack($padding, $object-fit: cover) {
@@ -33,4 +34,18 @@
 		height: 100%;
 		object-fit: $object-fit;
 	} 
+}
+
+@mixin green-line($width, $height) {
+
+	&::before {
+		content: "";
+		border-top: $height solid $corp-green;
+		display: inline-block;
+		width: $width;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		z-index: -1;
+	}
 }
