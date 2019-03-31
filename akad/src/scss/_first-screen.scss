@@ -1,5 +1,4 @@
 .first-screen {
-	font-family: $secondary-font;
 
 	&::before {
 		@include layout;
@@ -17,9 +16,7 @@
 	}
 
 	&__title {
-		font-size: $main-title;
-		text-transform: uppercase;
-		font-weight: 700;
+		@include title($main-title);
 		margin-bottom: px_to_rem(20px);
 	}
 }
