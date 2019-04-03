@@ -1,0 +1,138 @@
+$black: #000;
+$white: #fff;
+$grey: #969696;
+$col-size: 50;
+$value: #{$col-size}px;
+$col-quant: 8;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	background-color: $grey;
+	color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.container {
+	width: 100%;
+	max-width: #{$col-size * $col-quant}px;
+}
+
+.board {
+	position: relative;
+	margin-bottom: 1rem;
+	&::before {
+		position: absolute;
+		display: block;
+		width: 100%;
+		transform: translateY(-100%);
+		text-align: center;
+		font-size: 4rem;
+	}
+
+	li {
+		list-style: none;
+		width: $value;
+		height: $value;
+
+		&:nth-child(even){
+			background-color: $black;
+		}
+
+		&:nth-child(odd){
+			background-color: $white;
+		}
+	}
+
+	&.float {
+		&::before{
+			content: "float";
+		}
+		& > * {
+			&:before,
+			&:after {
+				content: " ";
+				display: table;
+			}
+
+			&:after {
+				clear: both;
+			}
+
+			&:nth-child(odd) {
+				& > * {
+					float: left;
+				}
+			}
+
+			&:nth-child(even) {
+				& > * {
+					float: right;
+				}
+			}
+		}
+	}
+
+	&.absolute {
+		&::before{
+			content: "absolute";
+		}
+		width: 100%;
+		min-height: #{$col-size * $col-quant}px;
+
+		& > * {
+			width: 100%;
+			min-height: $value;
+			position: absolute;
+
+			& > * {
+				position: absolute;
+			}
+
+			@for $i from 1 through $col-quant {
+				&:nth-child(#{$i}) {
+					top: #{ $col-size * $i - $col-size }px;
+					@for $j from 1 through $col-quant {
+						& > *:nth-child(#{$j}){
+							$position: #{ $col-size * ($j - 1) }px;
+							@if $i % 2 == 0 {
+								right: $position;
+							} @else {
+								left: $position;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn {
+	width: 100%;
+	padding: 15px 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2rem;
+	cursor: pointer;
+	border: none;
+	transition: background .2s ease;
+
+	&:hover {
+		background: darken($white, 10%);
+	}
+}
