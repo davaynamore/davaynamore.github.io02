@@ -234,32 +234,87 @@
 // нечисловых строк в этой задаче
 
 
-function getNumber(){
-	return prompt('Type a number more than 100');
-}
+// function getNumber(){
+// 	return prompt('Type a number more than 100');
+// }
 
-let answer, isNumber;
+// let answer, isNumber;
 
-do {
+// do {
 
-	answer = getNumber();
-	isNumber = Number.isInteger(+answer); //true, false
+// 	answer = getNumber();
+// 	isNumber = Number.isInteger(+answer); //true, false
 
-	if(!isNumber) {
-		alert("Type a number please!");
-		answer = 0;
-	}
+// 	if(!isNumber) {
+// 		alert("Type a number please!");
+// 		answer = 0;
+// 	}
 
-} while(+answer <= 100);
+// } while(+answer <= 100);
 
-alert('Thank you');
-
-
+// alert('Thank you');
 
 
 
+// Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
+// Другими словами, n>1 – простое, если при делении на любое число от 2 до n-1 есть остаток.
+// Создайте функцию, которая выводит все простые числа из интервала, который задает пользователь.
+
+// function getPrime(start, end) {
+
+// 	const arr = [];
+
+// 	for(let i = start; i <= end; i++){
+// 		if(isPrime(i)) arr.push(i);
+// 	}
+
+// 	function isPrime(n) {
+// 		if(n < 2) {
+// 			return false;
+// 		}
+
+// 		for(let i = 2; i < n; i++){
+// 			if(n % i === 0) return false
+// 		}
+
+// 	return true;
+// }
+// return arr;
+// }
 
 
+// console.log(getPrime(2, 100));
+
+// Напиши функцию map(fn, array), которая принимает на вход функцию и массив, и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:
+
+// function square(x) { return x * x; } // возведение в квадрат
+// console.log(map(square, [1, 2, 3, 4])); // [1, 4, 9, 16]
+// console.log(map(square, [])); // []
+
+// Обрати внимание: функция не должна изменять переданный ей массив:
+
+// var arr = [1, 2, 3];
+// console.log(map(square, arr)); // [1, 4, 9]
+// console.log(arr); // [1, 2, 3]
+
+
+// const arr = [1, 2, 3, 4];
+
+// function square(n) {
+// 	return n * n;
+// }
+
+// function map1(fn, array){
+// 	const newArr = [];
+// 	for(let i = 0; i < array.length; i++){
+// 		newArr.push(fn(array[i]));
+// 	}
+// 	return newArr;
+// }
+
+// function map2(fn, array){
+// 	return array.map(el => fn(el));
+// }
 
 
 
