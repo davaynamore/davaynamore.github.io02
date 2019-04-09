@@ -24,7 +24,7 @@
 	padding-top: $padding;
 	@content;
 
-	& > * {
+	& > img {
 		position: absolute;
 		top: 0;
 		right: 0;

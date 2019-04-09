@@ -82,7 +82,6 @@ a {
 
 		@media all and (max-width: 1200px) {
 			max-width: 100%;
-			flex: 0 0 100%;
 		}
 	}	
 }
@@ -98,6 +97,10 @@ a {
 		&:last-child {
 			margin-bottom: 0;			
 		}
+
+		@media all and (max-width: 767px) {
+			text-align: center;
+		}
 	}
 
 	&__link {
@@ -107,10 +110,61 @@ a {
 			margin-right: px_to_rem(10px);
 		}
 
+		@media all and (max-width: 767px) {
+			border-bottom: 2px solid  $corp-green;
+			text-transform: uppercase;
+			& > [class*="fa"] {
+				display: none;
+			}
+		}
+
 	}
 }
 
 .section-btn {
 	@include section-button($corp-green, $white);
 	font-weight: 700;
+}
+
+.to-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	$size: 50;
+	$value: #{$size}px;
+	width: $value;
+	height: $value;
+	background-color: rgba($corp-green, .3);
+	border: #{$size / 20}px solid rgba($corp-green, .3);
+	border-radius: 50%;
+	position: fixed;
+	bottom: $value;
+	right: $value;
+	color: $white;
+	cursor: pointer;
+	box-shadow: 0 0 0 10px rgba($black, .2);
+	z-index: 10;
+	@include transition(transform);
+
+	&::before {
+		content: "";
+		$size: 20px;
+		display: block;
+		width: $size;
+		height: $size;
+		border: 5px solid $white;
+		border-top: none;
+		border-right: none;
+		transform: rotate(135deg);
+		position: relative;
+		top: 5px;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+	}
+
+	// &.visible {
+	// 	display: flex;
+	// }
 }

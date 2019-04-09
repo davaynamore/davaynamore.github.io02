@@ -4,10 +4,12 @@ $secondary-font: 'Montserrat', sans-serif;
 
 $dark-text: #60606e;
 $corp-green: #7beec7;
-$white: #ffffff;
 $middle-grey: #e2e2e2;
 $light-grey: #cdcdcd;
 $footer-text: #9a9a9a;
+$white: #ffffff;
+$black: #000;
+
 
 $base-size: 14px;
 @function px_to_rem($target, $context: $base-size) {
