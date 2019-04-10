@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<title>Document</title>
+	<link rel="shortcut icon" type="image/x-icon" href="fav/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="product-card">
+				<header class="product-card__header">
+					<ul class="tabs">
+						<li class="tabs__item active" data-target="information">
+							<a href="#" class="tabs__link">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+									<g id="best game">
+										<g id="Group 1">
+											<path id="tooltip" class="shp0" d="M20.4 19L16.78 19L12.99 22.79L12.99 22.79C12.74 23.04 12.39 23.2 12 23.2C11.61 23.2 11.26 23.04 11.01 22.79L11.01 22.79L7.22 19L3.6 19C2.05 19 0.8 17.75 0.8 16.2L0.8 3.6C0.8 2.05 2.05 0.8 3.6 0.8L20.4 0.8C21.95 0.8 23.2 2.05 23.2 3.6L23.2 16.2C23.2 17.75 21.95 19 20.4 19ZM20.4 5C20.4 4.23 19.77 3.6 19 3.6L5 3.6C4.23 3.6 3.6 4.23 3.6 5L3.6 14.8C3.6 15.57 4.23 16.2 5 16.2L6.4 16.2L7.8 16.2C8.19 16.2 8.54 16.36 8.79 16.61L8.79 16.61L12 19.82L15.21 16.61L15.21 16.61C15.46 16.36 15.81 16.2 16.2 16.2L17.6 16.2L19 16.2C19.77 16.2 20.4 15.57 20.4 14.8L20.4 5ZM16.2 13.4L7.8 13.4C7.03 13.4 6.4 12.77 6.4 12C6.4 11.23 7.03 10.6 7.8 10.6L16.2 10.6C16.97 10.6 17.6 11.23 17.6 12C17.6 12.77 16.97 13.4 16.2 13.4ZM16.2 9.2L7.8 9.2C7.03 9.2 6.4 8.57 6.4 7.8C6.4 7.03 7.03 6.4 7.8 6.4L16.2 6.4C16.97 6.4 17.6 7.03 17.6 7.8C17.6 8.57 16.97 9.2 16.2 9.2Z" />
+										</g>
+									</g>
+								</svg>
+								information
+							</a>
+						</li>
+						<li class="tabs__item" data-target="rating">
+							<a href="#" class="tabs__link">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 23" width="19" height="23">
+									<g id="best game">
+										<g id="Group 1 copy 3">
+											<path id="card" class="shp0" d="M18.99 12.31C18.99 14.99 16.87 17.16 14.25 17.16C12.69 17.16 11.33 16.38 10.47 15.2L10.45 15.22L9.5 13.92L8.55 15.22L8.54 15.21C7.67 16.38 6.31 17.16 4.75 17.16C2.13 17.16 0.01 14.99 0.01 12.31C0.01 11.22 0.37 10.22 0.97 9.41L0.96 9.4C0.96 9.4 7.92 0.99 9.5 0.99C11.08 0.99 18.04 9.4 18.04 9.4L18.03 9.41C18.63 10.22 18.99 11.22 18.99 12.31ZM7.92 18.77L7.92 17.16C7.92 16.26 8.63 15.54 9.5 15.54C10.37 15.54 11.08 16.26 11.08 17.16L11.08 18.77C11.96 18.77 12.66 19.5 12.66 20.39C12.66 21.28 11.96 22.01 11.08 22.01L7.92 22.01C7.04 22.01 6.34 21.28 6.34 20.39C6.34 19.5 7.04 18.77 7.92 18.77Z" />
+										</g>
+									</g>
+								</svg>
+								rating info
+							</a>
+						</li>
+						<li class="tabs__item" data-target="buy">
+							<a href="#" class="tabs__link">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+									<g id="best game">
+										<g id="Group 1">
+											<path id="tooltip" class="shp0" d="M20.4 19L16.78 19L12.99 22.79L12.99 22.79C12.74 23.04 12.39 23.2 12 23.2C11.61 23.2 11.26 23.04 11.01 22.79L11.01 22.79L7.22 19L3.6 19C2.05 19 0.8 17.75 0.8 16.2L0.8 3.6C0.8 2.05 2.05 0.8 3.6 0.8L20.4 0.8C21.95 0.8 23.2 2.05 23.2 3.6L23.2 16.2C23.2 17.75 21.95 19 20.4 19ZM20.4 5C20.4 4.23 19.77 3.6 19 3.6L5 3.6C4.23 3.6 3.6 4.23 3.6 5L3.6 14.8C3.6 15.57 4.23 16.2 5 16.2L6.4 16.2L7.8 16.2C8.19 16.2 8.54 16.36 8.79 16.61L8.79 16.61L12 19.82L15.21 16.61L15.21 16.61C15.46 16.36 15.81 16.2 16.2 16.2L17.6 16.2L19 16.2C19.77 16.2 20.4 15.57 20.4 14.8L20.4 5ZM16.2 13.4L7.8 13.4C7.03 13.4 6.4 12.77 6.4 12C6.4 11.23 7.03 10.6 7.8 10.6L16.2 10.6C16.97 10.6 17.6 11.23 17.6 12C17.6 12.77 16.97 13.4 16.2 13.4ZM16.2 9.2L7.8 9.2C7.03 9.2 6.4 8.57 6.4 7.8C6.4 7.03 7.03 6.4 7.8 6.4L16.2 6.4C16.97 6.4 17.6 7.03 17.6 7.8C17.6 8.57 16.97 9.2 16.2 9.2Z" />
+										</g>
+									</g>
+								</svg>
+								where to buy
+							</a>
+						</li>
+					</ul>
+				</header>
+					<section class="product-card__body card visible" data-content="information">
+						<div class="card-img">
+							<div class="img-wrapper">
+								<img src="img/game.jpg">
+							</div>
+							<ul class="rating">
+								<li class="rating__item active">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+										<g id="best game">
+											<g id="game 1">
+												<g id="stars">
+													<path id="favourite copy 4" class="shp0" d="M5.33,18.3c1.72,-0.81 4.72,-2.24 4.72,-2.24c0,0 2.94,1.38 4.81,2.26c-0.61,-0.29 1.57,1.24 1.37,-0.88c-0.19,-2.04 -0.5,-5.31 -0.5,-5.31c0,0 2.15,-2.39 3.49,-3.88c-0.56,0.62 1.54,-1.08 -0.41,-1.45c-1.98,-0.37 -5.52,-0.63 -5.52,-0.63c0,0 -1.41,-3.26 -2.45,-5.05c0.48,0.84 -0.55,-1.85 -1.59,-0.04c-1.03,1.8 -2.54,5.11 -2.54,5.11c0,0 -3.44,0.27 -5.41,0.65c0.78,-0.15 -1.81,-0.08 -0.5,1.37c1.34,1.48 3.57,3.95 3.57,3.95c0,0 -0.3,3.28 -0.48,5.32c0.05,-0.53 -0.68,1.83 1.46,0.82z" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</li>
+								<li class="rating__item active">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+										<g id="best game">
+											<g id="game 1">
+												<g id="stars">
+													<path id="favourite copy 4" class="shp0" d="M5.33,18.3c1.72,-0.81 4.72,-2.24 4.72,-2.24c0,0 2.94,1.38 4.81,2.26c-0.61,-0.29 1.57,1.24 1.37,-0.88c-0.19,-2.04 -0.5,-5.31 -0.5,-5.31c0,0 2.15,-2.39 3.49,-3.88c-0.56,0.62 1.54,-1.08 -0.41,-1.45c-1.98,-0.37 -5.52,-0.63 -5.52,-0.63c0,0 -1.41,-3.26 -2.45,-5.05c0.48,0.84 -0.55,-1.85 -1.59,-0.04c-1.03,1.8 -2.54,5.11 -2.54,5.11c0,0 -3.44,0.27 -5.41,0.65c0.78,-0.15 -1.81,-0.08 -0.5,1.37c1.34,1.48 3.57,3.95 3.57,3.95c0,0 -0.3,3.28 -0.48,5.32c0.05,-0.53 -0.68,1.83 1.46,0.82z" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</li>
+								<li class="rating__item active">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+										<g id="best game">
+											<g id="game 1">
+												<g id="stars">
+													<path id="favourite copy 4" class="shp0" d="M5.33,18.3c1.72,-0.81 4.72,-2.24 4.72,-2.24c0,0 2.94,1.38 4.81,2.26c-0.61,-0.29 1.57,1.24 1.37,-0.88c-0.19,-2.04 -0.5,-5.31 -0.5,-5.31c0,0 2.15,-2.39 3.49,-3.88c-0.56,0.62 1.54,-1.08 -0.41,-1.45c-1.98,-0.37 -5.52,-0.63 -5.52,-0.63c0,0 -1.41,-3.26 -2.45,-5.05c0.48,0.84 -0.55,-1.85 -1.59,-0.04c-1.03,1.8 -2.54,5.11 -2.54,5.11c0,0 -3.44,0.27 -5.41,0.65c0.78,-0.15 -1.81,-0.08 -0.5,1.37c1.34,1.48 3.57,3.95 3.57,3.95c0,0 -0.3,3.28 -0.48,5.32c0.05,-0.53 -0.68,1.83 1.46,0.82z" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</li>
+								<li class="rating__item active">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+										<g id="best game">
+											<g id="game 1">
+												<g id="stars">
+													<path id="favourite copy 4" class="shp0" d="M5.33,18.3c1.72,-0.81 4.72,-2.24 4.72,-2.24c0,0 2.94,1.38 4.81,2.26c-0.61,-0.29 1.57,1.24 1.37,-0.88c-0.19,-2.04 -0.5,-5.31 -0.5,-5.31c0,0 2.15,-2.39 3.49,-3.88c-0.56,0.62 1.54,-1.08 -0.41,-1.45c-1.98,-0.37 -5.52,-0.63 -5.52,-0.63c0,0 -1.41,-3.26 -2.45,-5.05c0.48,0.84 -0.55,-1.85 -1.59,-0.04c-1.03,1.8 -2.54,5.11 -2.54,5.11c0,0 -3.44,0.27 -5.41,0.65c0.78,-0.15 -1.81,-0.08 -0.5,1.37c1.34,1.48 3.57,3.95 3.57,3.95c0,0 -0.3,3.28 -0.48,5.32c0.05,-0.53 -0.68,1.83 1.46,0.82z" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</li>
+								<li class="rating__item">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+										<g id="best game">
+											<g id="game 1">
+												<g id="stars">
+													<path id="favourite copy 4" class="shp0" d="M5.33,18.3c1.72,-0.81 4.72,-2.24 4.72,-2.24c0,0 2.94,1.38 4.81,2.26c-0.61,-0.29 1.57,1.24 1.37,-0.88c-0.19,-2.04 -0.5,-5.31 -0.5,-5.31c0,0 2.15,-2.39 3.49,-3.88c-0.56,0.62 1.54,-1.08 -0.41,-1.45c-1.98,-0.37 -5.52,-0.63 -5.52,-0.63c0,0 -1.41,-3.26 -2.45,-5.05c0.48,0.84 -0.55,-1.85 -1.59,-0.04c-1.03,1.8 -2.54,5.11 -2.54,5.11c0,0 -3.44,0.27 -5.41,0.65c0.78,-0.15 -1.81,-0.08 -0.5,1.37c1.34,1.48 3.57,3.95 3.57,3.95c0,0 -0.3,3.28 -0.48,5.32c0.05,-0.53 -0.68,1.83 1.46,0.82z" />
+												</g>
+											</g>
+										</g>
+									</svg>
+								</li>
+							</ul>
+						</div>
+					
+						<div class="card-info">
+							<div class="card-info__top">
+								<div class="card-info__title">
+									<h2>FarCry 4</h2>
+									<span class="card-info__subtitle">First Released Nov 17, 2014</span>
+								</div>
+					
+								<div class="card-info__rate">
+									<span>6.5</span>
+								</div>
+							</div>
+					
+							<p class="card-info__middle">
+								In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima layas struggling under the regime of a despotic self-appointed king.
+							</p>
+					
+							<div class="card-info__bottom">
+								<div class="card-info__price">
+									<span class="card-info__discount">
+										20% off
+									</span>
+									$59.96
+								</div>
+								<button class="card-info__btn">buy it now</button>
+							</div>
+						</div>
+					</section>
+					<section class="product-card__body card" data-content="rating">
+						<div class="card-img">
+							<div class="card-info__title">
+								<h2>Rating</h2>
+							</div>
+						</div>
+						<div class="card-info">
+							<p class="card-info__middle">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad recusandae, aliquam. Laboriosam sed nulla neque dolorem vero qui enim earum doloremque mollitia deserunt possimus ea consequatur, cupiditate nobis, fugiat eius perferendis dolore. Totam tenetur aliquid fugit ipsa eaque sequi quaerat doloremque ullam laboriosam vitae, porro dolores modi saepe numquam, cum repudiandae adipisci harum praesentium provident voluptate omnis, obcaecati repellendus commodi. Quibusdam vel mollitia eos non consequuntur, optio aspernatur sit tempora, iure aliquid quam. Accusantium similique eos fugiat odit assumenda officia vel autem. Voluptate facere aliquid molestiae enim totam deleniti, odio ad esse ex, placeat, ipsam assumenda animi possimus qui!
+							</p>
+						</div>
+					</section>
+					<section class="product-card__body card" data-content="buy">
+						<div class="card-img">
+							<div class="card-info__title">
+								<h2>Where to buy</h2>
+							</div>
+						</div>
+						<div class="card-info">
+							<p class="card-info__middle">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum ad recusandae, aliquam. Laboriosam sed nulla neque dolorem vero qui enim earum doloremque mollitia deserunt possimus ea consequatur, cupiditate nobis, fugiat eius perferendis dolore. Totam tenetur aliquid fugit ipsa eaque sequi quaerat doloremque ullam laboriosam vitae, porro dolores modi saepe numquam, cum repudiandae adipisci harum praesentium provident voluptate omnis, obcaecati repellendus commodi. Quibusdam vel mollitia eos non consequuntur, optio aspernatur sit tempora, iure aliquid quam. Accusantium similique eos fugiat odit assumenda officia vel autem. Voluptate facere aliquid molestiae enim totam deleniti, odio ad esse ex, placeat, ipsam assumenda animi possimus qui!
+							</p>
+						</div>
+					</section>
+			</div>
+			<!-- /.product-card -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

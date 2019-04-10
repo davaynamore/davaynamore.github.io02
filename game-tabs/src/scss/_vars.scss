@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+$base-font: 'Lato', sans-serif;
+
+$white: #fff;
+$black: #000;
+$green: #13e18c;
+$yellow: #ffdd3f;
+$overlay-bg: #282d3e;
+$card-header-bg: #2b2f3f;
+$card-body-bg: #212434;
+$dark-text-color: #8d90a3;
+$light-text-color: darken($white, 5%);
+$unactive-star-color: #4b526b;
+
+
+$base-size: 16px;
+
+@function rem($target, $context: $base-size) {
+  @if $target == 0 { @return 0 }
+  @return $target / $context + 0rem;
+}
+
+$large-size: rem(32px);
+$big-size: rem(20px);
+$middle-size: rem(14px);
+$small-size: rem(12px);
+
+$img-path: "../img";

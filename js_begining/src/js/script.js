@@ -62,48 +62,74 @@
 // console.log(typeof null);
 // console.log(typeof undefined);
 
-// const container = document.createElement('div');
+// function cubes(){
 
-// const table = document.createElement('div');
-// const left = document.createElement('div');
-// left.innerText = 0;
-// const right = document.createElement('div');
-// right.innerText = 0;
-// const btn = document.createElement('button');
-// btn.innerText = 'Start';
-// table.appendChild(left);
-// table.appendChild(right);
-// document.body.appendChild(container);
-// container.appendChild(table);
-// container.appendChild(btn);
-// table.classList.add('game_table');
-// left.classList.add('left');
-// left.classList.add('cube');
-// right.classList.add('right');
-// right.classList.add('cube');
-// btn.classList.add('btn');
-// container.classList.add('container');
+// 	function init(){
+// 		const container = document.createElement('div');
+// 		const startBtn = document.createElement('button');
 
-// // const userNum = prompt('Type your number', 0);
+// 		container.classList.add('container');
+// 		startBtn.classList.add('btn');
 
+// 		startBtn.innerText = 'Start game';
 
-// function getRandom(){
-// 	return Math.ceil(Math.random() * +userNum);
+// 		document.body.appendChild(container);
+// 		container.appendChild(startBtn);
+
+// 		startBtn.addEventListener('click', function(){
+// 			startBtn.remove();
+// 			start();
+// 		});
+// 	}
+
+// 	function start(){
+// 		const btn = document.createElement('button');
+// 		const left = document.createElement('div');
+// 		const right = document.createElement('div');
+// 		const table = document.createElement('div');
+// 		const container = document.querySelector('.container');
+
+// 		left.innerText = 0;
+// 		right.innerText = 0;
+// 		btn.innerText = 'Start';
+
+// 		table.appendChild(left);
+// 		table.appendChild(right);
+// 		container.appendChild(table);
+// 		container.appendChild(btn);
+
+// 		table.classList.add('game_table');
+// 		left.classList.add('left');
+// 		left.classList.add('cube');
+// 		right.classList.add('right');
+// 		right.classList.add('cube');
+// 		btn.classList.add('btn');
+
+// 		function getRandom(){
+// 			return Math.ceil(Math.random() * 6);
+// 		}
+
+// 		btn.addEventListener('click', function(){
+// 			const randomLeft = getRandom();
+// 			left.innerText = randomLeft;
+// 			const randomRight = getRandom();
+// 			right.innerText = randomRight;
+// 		});
+// 	}
+
+// 	return {init: init}
 // }
 
-// btn.addEventListener('click', function(){
-// 	const randomLeft = getRandom();
-// 	left.innerText = randomLeft;
-// 	const randomRight = getRandom();
-// 	right.innerText = randomRight;	
-// });
+// const game = cubes();
 
+// game.init();
+
+// // const userNum = prompt('Type your number', 0);
 
 // const form = document.getElementById('form');
 // const textField = document.createElement('div');
 // document.body.appendChild(textField);
 // textField.innerText = 0;
-
 
 // form.addEventListener('submit', function(event) {
 // 	event.preventDefault();
@@ -133,7 +159,7 @@
 
 // answer = answer.toLowerCase();
 
-// if(answer === 'ecmascript' ) { 
+// if(answer === 'ecmascript' ) {
 // 	alert('Верно!');
 // } else {
 // 	alert('Не знаете? «ECMAScript»!')
@@ -141,7 +167,7 @@
 
 // if (a + b < 4) {
 // 	result = 'Мало';
-// 	result += ' Davay esche, please' 
+// 	result += ' Davay esche, please'
 // } else {
 // 	result = 'Много';
 // }
@@ -158,7 +184,7 @@
 // console.log(answer);
 
 // undefined = false
-// null = false 
+// null = false
 // 0 = false
 // '' = false
 // NaN = false
@@ -315,6 +341,180 @@
 // function map2(fn, array){
 // 	return array.map(el => fn(el));
 // }
+
+
+// var playList = [
+// {
+// 	author: "LED ZEPPELIN",
+// 	song:"STAIRWAY TO HEAVEN"
+// },
+// {
+// 	author: "QUEEN",
+// 	song:"BOHEMIAN RHAPSODY"
+// },
+// {
+// 	author: "LYNYRD SKYNYRD",
+// 	song:"FREE BIRD"
+// },
+// {
+// 	author: "DEEP PURPLE",
+// 	song:"SMOKE ON THE WATER"
+// },
+// {
+// 	author: "JIMI HENDRIX",
+// 	song:"ALL ALONG THE WATCHTOWER"
+// },
+// {
+// 	author: "AC/DC",
+// 	song:"BACK IN BLACK"
+// },
+// {
+// 	author: "QUEEN",
+// 	song:"WE WILL ROCK YOU"
+// },
+// {
+// 	author: "METALLICA",
+// 	song:"ENTER SANDMAN"
+// }
+// ];
+
+// function showPlayList(data) {
+// 	const orderedList = document.createElement('ol');
+// 	orderedList.setAttribute('type', 'I');
+// 	document.body.appendChild(orderedList);
+// 	document.body.style.minHeight = "100vh";
+// 	document.body.style.background = "linear-gradient(to right, #ffa17f, #00223e)";
+// 	document.body.style.display = "flex";
+// 	document.body.style.justifyContent = "center";
+// 	document.body.style.alignItems = "center";
+// 	orderedList.style.color = "lightgoldenrodyellow";
+
+// 	for(let i = 0;i < data.length;i++) {
+// 		const listItem = document.createElement('li');
+// 		const link = document.createElement('a');
+// 		link.innerText = `${data[i].author} : ${data[i].song}`;
+// 		listItem.appendChild(link);
+// 		orderedList.appendChild(listItem);
+// 	}
+// }
+// showPlayList(playList);
+
+// Создайте <div>, который при нажатии Ctrl+E превращается в <textarea>.
+// Изменения, внесенные в поле, можно сохранить обратно в <div> сочетанием клавиш Ctrl+S, при этом <div> получит в виде HTML содержимое <textarea>.
+// Если же нажать Esc, то <textarea> снова превращается в <div>, изменения не сохраняются.
+
+document.addEventListener('DOMContentLoaded', () => {
+	const field = (function editingField(){
+
+		const divSize = '500px';
+		const styles = {
+			width: '100%',
+			maxWidth: divSize,
+			height: divSize,
+			backgroundColor: 'white',
+			border: '2px solid red',
+			fontWeight: 'bold',
+			color: 'black',
+			fontSize: '2rem',
+			fontFamily: 'Arial, sans-serif'
+		}
+
+		let oldContent = '';
+
+		function getOldContent(){
+			oldContent = getContentFromArea();
+		}
+
+		function createDiv(content = ''){
+			getOldContent();
+			const divEl = document.createElement('div');
+			setStylesToElement(divEl, styles);
+			const divContent = document.createElement('p');
+			divEl.classList.add('area');
+			divContent.classList.add('areaContent');
+			divContent.innerText = content;
+			divEl.appendChild(divContent);
+			document.body.appendChild(divEl);
+		}
+
+		function createTextarea(content = ''){
+			getOldContent();
+			const textareaEl = document.createElement('textarea');
+			setStylesToElement(textareaEl, styles);
+			textareaEl.classList.add('area');
+			document.body.appendChild(textareaEl);
+			textareaEl.value = content;
+			textareaEl.focus();
+		}
+
+		function getContentFromArea(){
+			const el = document.querySelector('.areaContent') || document.querySelector('.area');
+			if(!el) return;
+			return el.innerText || el.value;
+		}
+
+		function removeArea(){
+			document.querySelector('.area').remove();
+		}
+
+		function setStylesToElement(el, styles = {}){
+			for(let prop in styles){
+				el.style[prop] = styles[prop];
+			}
+		}
+
+		document.body.addEventListener('keydown', (e) => {
+			const keycode = e.keyCode;
+			const ctrlKey = e.ctrlKey;
+	if(ctrlKey && keycode === 81) { // to textarea: key: "q"
+		createTextarea(getContentFromArea());
+	removeArea();
+}
+
+	if(ctrlKey && keycode === 90){  // changes to div: key: "z"
+		createDiv(getContentFromArea());
+	removeArea();
+}
+
+	if(keycode === 27 && document.body.querySelector('textarea')) { // reset: key: "esc"
+		removeArea();
+	createDiv(oldContent);
+}
+})
+
+		return {init: createDiv}
+	})();
+
+	field.init();
+});
+
+
+
+
+
+
+
+if (!Function.prototype.softBind) {
+	Function.prototype.softBind = function(obj) {
+		var fn = this,
+		curried = [].slice.call( arguments, 1 ),
+		bound = function bound() {
+			return fn.apply(
+				(!this ||
+					(typeof window !== "undefined" &&
+						this === window) ||
+					(typeof global !== "undefined" &&
+						this === global)
+					) ? obj : this,
+				curried.concat.apply( curried, arguments )
+				);
+		};
+		bound.prototype = Object.create( fn.prototype );
+		return bound;
+	};
+}
+
+
 
 
 
