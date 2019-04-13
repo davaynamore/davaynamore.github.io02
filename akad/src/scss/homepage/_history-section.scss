@@ -1,5 +1,12 @@
 .history {
 	transform: translateY(-76%);
+	margin-bottom: -15%;
+
+	@media screen and (max-height: 768px){
+		padding: 70px 0;
+		transform: translateY(0);
+		margin-bottom: 0;
+	}
 
 	.img-wrapper {
 		@include padding-hack(87%);
@@ -12,7 +19,6 @@
 
 	&__text {
 		line-height: 1.8;
-		// margin-bottom: 4.5rem;
 		height: 170px;
 		overflow: hidden;
 		margin-bottom: 1rem;

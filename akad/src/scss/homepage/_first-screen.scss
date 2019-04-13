@@ -19,6 +19,11 @@
 			width: 100%;
 			flex-grow: 1.5;
 			justify-content: flex-end;
+
+			@media screen and (max-height: 768px){
+				flex-grow: 0;
+				justify-content: center;
+			}
 		}
 
 		&__content {
@@ -27,6 +32,8 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+
+
 		}
 
 		&__title {
@@ -50,6 +57,10 @@
 			text-align: center;
 			margin-bottom: 0;
 			flex-grow: 3;
+
+			@media screen and (max-height: 768px){
+				flex-grow: 0;
+			}
 		}
 
 	}
