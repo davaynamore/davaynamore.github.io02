@@ -1,0 +1,27 @@
+.history {
+	transform: translateY(-76%);
+
+	.img-wrapper {
+		@include padding-hack(87%);
+	}
+
+	.section-title {
+		text-align: left;
+		margin-bottom: 15px;
+	}
+
+	&__text {
+		line-height: 1.8;
+		// margin-bottom: 4.5rem;
+		height: 170px;
+		overflow: hidden;
+		margin-bottom: 1rem;
+	}
+
+	.section-btn {
+		@include section-button($white, $corp-green);
+		font-weight: 700;
+		display: block;
+	}
+
+}
