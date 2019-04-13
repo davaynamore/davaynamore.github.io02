@@ -91,7 +91,7 @@
 			});
 		}
 
-		appendCircle('.card-info__rate', '7.8', '90px');
+		appendCircle('.card-info__rate', '5.0', '90px');
 
 
 	})(jQuery);

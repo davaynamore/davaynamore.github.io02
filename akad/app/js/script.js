@@ -48,7 +48,11 @@
 
 
 	document.body.addEventListener('keydown', function(event){
-		console.dir(event);
+		if(event.keyCode === 17 && event.ctrlKey) {
+			
+		}
+
+		}
 	})
 
 });	

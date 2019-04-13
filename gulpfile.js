@@ -51,7 +51,7 @@ const task = {
 
 const path = {
 	src: {
-		html: `${targetPath}/src/index.html`,
+		html: `${targetPath}/src/*.html`,
 		js: `${targetPath}/src/js/script.js`,
 		scss: `${targetPath}/src/scss/**/[^_]*.+(scss|sass)`,
 		img: [`${targetPath}/src/img/**/*.*`, `!${targetPath}/src/img/**/*.ini`],
@@ -97,7 +97,7 @@ gulp.task(task.dev.css, () => {
 
 gulp.task(task.dev.html, () => {
 	return gulp.src(path.src.html, { allowEmpty: true })
-	.pipe($.rigger())
+	.pipe($.rigger().on('error', $.notify.onError("Rigger-Error: <%= error.message %>")))
 	.pipe(gulp.dest(path.app.html))
 	.pipe(browserSync.stream());
 });
@@ -113,7 +113,7 @@ gulp.task(task.validator, () => {
 
 gulp.task(task.dev.js, () => {
 	return gulp.src(path.src.js, { allowEmpty: true })
-	.pipe($.rigger())
+	.pipe($.rigger().on('error', $.notify.onError("Rigger-Error: <%= error.message %>")))
 	.pipe(gulp.dest(path.app.js))
 	.pipe(browserSync.stream());
 });
