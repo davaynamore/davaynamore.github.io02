@@ -168,3 +168,15 @@ a {
 	// 	display: flex;
 	// }
 }
+
+.first-screen {
+
+	&::before {
+		@include layout;
+		background: $middle-grey no-repeat;
+		background-size: cover;
+		filter: grayscale(100%);
+		z-index: -1;
+	}
+
+}

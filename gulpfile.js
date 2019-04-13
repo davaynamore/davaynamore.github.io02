@@ -84,12 +84,14 @@ const path = {
 gulp.task(task.dev.css, () => {
 	return setTimeout(() => {
 		return gulp.src(path.src.scss, { sourcemaps: true, allowEmpty: true })
+		.pipe($.sourcemaps.init())
 		.pipe($.sass().on('error', $.notify.onError("SASS-Error: <%= error.message %>")))
 		.pipe($.autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false
 		}))
 		.pipe($.csscomb())
+		.pipe($.sourcemaps.write())
 		.pipe(gulp.dest(path.app.css), { sourcemaps: true })
 		.pipe(browserSync.stream());
 	}, 500);

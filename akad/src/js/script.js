@@ -45,15 +45,7 @@
 	// }
 
 	window.pageYOffset >= window.innerHeight ? btnToTop.addBtn() : btnToTop.removeBtn();
-
-
-	document.body.addEventListener('keydown', function(event){
-		if(event.keyCode === 17 && event.ctrlKey) {
-			
-		}
-
-		}
-	})
+	
 
 });	
 })();
