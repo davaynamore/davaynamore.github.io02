@@ -47,5 +47,7 @@
 	window.pageYOffset >= window.innerHeight ? btnToTop.addBtn() : btnToTop.removeBtn();
 	
 
+
+
 });	
 })();

@@ -70,15 +70,30 @@ a {
 		text-align: center;
 		@include title($section-title);
 		margin-bottom: px_to_rem(25px);
-		@include green-line(65px, 20px);
+
+		&__marker {
+			position: relative;
+			@include green-line(65px, 20px);	
+		}
+
+		&.inline {
+			display: inline-block;
+		}
 	}
 
 	&-description {
+		@media all and (max-width: 576px){
+			text-align: justify;
+		}	
 		text-align: center;
 		margin: 0;
 		line-height: 2;
 		max-width: 66.666667%;
 		flex: 0 0 66.666667%;
+
+		&.center {
+			margin: auto;
+		}
 
 		@media all and (max-width: 1200px) {
 			max-width: 100%;
@@ -182,5 +197,10 @@ a {
 }
 
 .mb-100 {
-	margin-bottom: 100px;
+	margin-bottom: 25px;
+
+	@media all and (min-width: 1200px) {
+		margin-bottom: 100px;
+	}
+	
 }

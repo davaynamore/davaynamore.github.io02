@@ -4,7 +4,11 @@
 
 		&::before {
 			opacity: .25;
-			background-image: url("#{$img-path}/homepage/first-screen_bg.jpg");
+			background-color: red;
+
+			@media all and (min-width: 577px) {
+				background-image: url("#{$img-path}/homepage/first-screen_bg.jpg");
+			}
 		}
 
 		.title-wrapper {

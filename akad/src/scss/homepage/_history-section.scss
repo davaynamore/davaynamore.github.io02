@@ -1,11 +1,12 @@
 .history {
-	transform: translateY(-76%);
-	margin-bottom: -15%;
+	padding: 35px 0;
+	transform: translateY(0);
+	margin-bottom: 0;
 
-	@media screen and (max-height: 768px){
+	@media screen and (min-height: 769px){
 		padding: 70px 0;
-		transform: translateY(0);
-		margin-bottom: 0;
+		transform: translateY(-76%);
+		margin-bottom: -15%;	
 	}
 
 	.img-wrapper {
@@ -13,15 +14,24 @@
 	}
 
 	.section-title {
-		text-align: left;
 		margin-bottom: 15px;
+
+		@media screen and (min-width: 991px){
+			text-align: left;
+		}
+		
 	}
 
 	&__text {
+		text-align: justify;
 		line-height: 1.8;
 		height: 170px;
 		overflow: hidden;
 		margin-bottom: 1rem;
+
+		@media screen and (min-width: 577px){
+			text-align: left;
+		}
 	}
 
 	.section-btn {

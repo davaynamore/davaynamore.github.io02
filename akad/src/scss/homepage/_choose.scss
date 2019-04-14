@@ -1,11 +1,13 @@
-.choose {	
+.choose {
 
 	.section-title {
-		display: inline-block;
+		@media all and (max-width: 576px){
+			margin-bottom: 0;	
+		}
 	}
 
 	.section-description {
-		margin: auto;
+
 	}
 
 	&__card {
