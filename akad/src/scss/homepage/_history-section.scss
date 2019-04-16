@@ -3,10 +3,14 @@
 	transform: translateY(0);
 	margin-bottom: 0;
 
-	@media screen and (min-height: 769px){
-		padding: 70px 0;
-		transform: translateY(-76%);
-		margin-bottom: -15%;	
+	@media screen and (min-width: 1200px){
+		padding: 150px 0;
+	}
+
+	@media screen and (min-height: 769px) and (min-width: 1366px){
+		padding: 0 0 70px;
+		transform: translateY(-64%);
+		margin-bottom: -15.4%;
 	}
 
 	.img-wrapper {
@@ -19,7 +23,6 @@
 		@media screen and (min-width: 991px){
 			text-align: left;
 		}
-		
 	}
 
 	&__text {

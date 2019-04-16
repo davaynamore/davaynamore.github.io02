@@ -65,7 +65,7 @@
 		@if($bg-color == $white) {
 			background-color: darken($bg-color, 5%);
 			} @else {
-				background-color: lighten($bg-color, 10%);	
+				background-color: lighten($bg-color, 10%);
 			}
 		}
 	}
