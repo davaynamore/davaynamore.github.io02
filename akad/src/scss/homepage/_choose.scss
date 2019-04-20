@@ -12,6 +12,11 @@
 
 	&__card {
 		text-transform: uppercase;
+		text-align: center;
+
+		@media all and (min-width: 576px) {
+			text-align: left;
+		}
 		
 		& > * {
 			margin-bottom: 1rem;

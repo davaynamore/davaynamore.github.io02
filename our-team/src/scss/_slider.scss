@@ -1,0 +1,77 @@
+.slider {
+	
+	&__item {
+
+	}
+
+	&__side {
+		padding: 90px;
+	}
+
+	&__left-side {
+		
+	}
+
+	&__right-side {
+		
+	}
+
+	&__item-pic {
+		$position: 15;
+		position: relative;
+		border: 1px solid $gold;
+		@include corners(-#{$position}px);
+
+		&::before,
+		&::after {
+			top: -#{$position}px;
+		}
+
+		&::after {
+			transform: rotate(90deg);
+		}
+
+		&-wrapper {
+			position: relative;
+			@include corners(-#{$position}px);
+
+			&::before,
+			&::after {
+				bottom: -#{$position}px;
+			}
+
+			&::before {
+				transform: rotate(-90deg);
+			}
+
+			&::after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.person {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__name {
+		font-family: $title-font;
+		font-size: $large-size;
+		font-weight: 900;
+		text-transform: capitalize;
+		letter-spacing: 0.72px;
+	}
+
+	&__profession {
+		font-size: $big-size;
+	}
+
+	&__description {
+		text-align: center;
+		font-weight: 500;
+		color: $dark-grey;
+		margin-bottom: 20px;
+	}
+}
