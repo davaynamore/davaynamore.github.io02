@@ -28,6 +28,20 @@ function paddingHack(items){
 	}
 }
 
-const mansoryGridPadHack = paddingHack('.slider__item-pic');
+const paddingHackEl = paddingHack('.slider__item-pic');
 
-mansoryGridPadHack.init();
+paddingHackEl.init();
+
+
+
+$(document).ready(function(){
+	$('.slider').slick({
+		arrows: true,
+		dots: true,
+		speed: 300,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		infinite: true,
+		// autoplay: true,
+	});
+});

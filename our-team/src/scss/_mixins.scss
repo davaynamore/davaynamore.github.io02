@@ -1,6 +1,6 @@
 @mixin square($size) {
 	width: $size;
-	height: $size;
+	height: $size;	
 }
 
 @mixin padding-hack($padding, $object-fit: cover) {
@@ -30,6 +30,10 @@
 		position: absolute;
 		border-bottom: none;
 		border-right: none;
+
+		@media all and (max-width: 991px) {
+			display: none;
+		}
 	}
 
 	&::before {

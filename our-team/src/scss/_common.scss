@@ -11,20 +11,26 @@ body {
 }
 
 .our-team {
-	padding: 100px 0;
+	padding: 50px 0;
 
 	&__title,
 	&__subtitle {
 		text-transform: uppercase;
+		text-align: center;
 	}
 
 	&__title {
 		color: $gold;
-		font-size: $huge-size;
+		font-size: $resp-huge-size;
 		font-family: $title-font;
 		font-weight: 900;
 		margin: 0;
-		margin-bottom: 45px;
+		margin-bottom: 20px;
+
+		@media all and (min-width: 576px) {
+			font-size: $huge-size;
+			margin-bottom: 45px;
+		}
 	}
 
 	&__subtitle {
@@ -39,6 +45,10 @@ body {
 	@include square(15px);
 	background: url("#{$img-path}/bonfire_icon.png") no-repeat center;
 	background-size: cover;
+
+	@media all and (max-width: 575px){
+		display: none;
+	}
 
 	&::before,
 	&::after {
@@ -87,7 +97,9 @@ body {
 		transition: all .2s ease;
 
 		&:hover {
-			text-decoration: none;	
+			text-decoration: none;
+			color: $gold;
+			border-color: $gold;
 		}
 	}
 }

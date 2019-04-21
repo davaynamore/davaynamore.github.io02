@@ -1,15 +1,40 @@
 .slider {
 	
 	&__item {
-
+		display: flex!important;
+		width: initial!important;
+		justify-content: center;
 	}
 
 	&__side {
-		padding: 90px;
+		padding: 0;
+
+		@media all and (min-width: 768px) {
+			padding: 45px 0;
+		}
+
+		@media all and (min-width: 992px) {
+			padding: 90px;
+		}
+		
 	}
 
 	&__left-side {
+		position: relative;
 		
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 100%;
+			border-left: 1px solid $gold;
+			top: 0;
+			right: -15px;
+
+			@media all and (max-width: 575px) {
+				display: none;
+			}
+		}
 	}
 
 	&__right-side {
@@ -32,6 +57,7 @@
 		}
 
 		&-wrapper {
+			// animation: pulse 2s infinite ease;
 			position: relative;
 			@include corners(-#{$position}px);
 
@@ -73,5 +99,133 @@
 		font-weight: 500;
 		color: $dark-grey;
 		margin-bottom: 20px;
+		width: 100%;
+		max-width: 80%;
+	}
+
+	&__view {
+		font-family: $button-font;
+		text-align: center;
+		font-weight: 700;
+		border: 1px solid $gold;
+		text-transform: uppercase;
+		display: block;
+		width: 100%;
+		max-width: 120px;
+		color: $grey;
+		transition: all .2s ease;
+
+		&.mobile {
+			display: none;
+			@media all and (min-width: 768px) and (max-width: 991px) {
+				display: block;
+				margin: auto;
+				max-width: 80%;
+				padding: 5px 0;
+				background-color: $gold;
+				color: $white;
+			}			
+		}
+
+		@media all and (min-width: 768px) and (max-width: 991px) {
+			display: none;
+		}
+
+		&:hover {
+			text-decoration: none;
+			color: $white;
+			background-color: $gold;
+		}
+	}
+}
+
+.slick-list {
+	margin-bottom: 40px;
+}
+
+
+.slick-arrow {
+
+	@media all and (max-width: 991px) {
+		display: none!important;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		@include square(15px);
+		border: 2px solid $gold;
+		border-top: none;
+		border-right: none;
+		transform: rotate(45deg);
+	}
+
+	&.slick-next {
+		&::before {
+			transform: rotate(-135deg);		
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1.0);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1.0);
+	}
+}
+
+
+
+.slick-dots {
+	position: initial;
+
+	@media all and (max-width: 991px) {
+		display: none!important;
+	}
+
+	li {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+
+		&.slick-active {
+			button {
+
+				&::before {
+					border-color: $gold;
+					background-color: $white;
+					transform: scale(1.4);
+				}
+
+			}
+		}
+
+		button {
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&::before {
+				content: '';
+				@include square(10px);
+				display: block;
+				border: 2px solid transparent;
+				background-color: $gold;
+				border-radius: 50%;
+				opacity: 1;
+				position: initial;
+			}
+
+		}
+
 	}
 }
