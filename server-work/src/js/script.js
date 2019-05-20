@@ -10,6 +10,9 @@
 			this.set = (key, value) => {
 				localStorage.setItem(key, JSON.stringify(value));
 			}
+			this.remove = (key) => {
+				localStorage.removeItem(key);
+			}
 		}
 
 		const Storage = new StorageHelper();
