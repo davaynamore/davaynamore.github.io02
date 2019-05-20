@@ -1,0 +1,140 @@
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
+
+$bg_colors: (
+	section1: green,
+	section2: blue,
+	section3: aqua,
+	section4: whitesmoke,
+	section5: red
+);
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+.container {
+	width: 100%;
+	max-width: 1140px;
+	margin: auto;
+	min-height: 100vh;
+	background-color: #ccc;
+	position: relative;
+	padding-top: 40px;
+}
+
+.menu {
+	width: 100%;
+	position: sticky;
+	top: 0;
+
+	&__list {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+
+		&.active {
+			display: flex;
+			padding-top: 5rem;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+
+		@media all and (max-width: 991px) {
+			display: none;
+		}
+	}
+
+	&__list-item {
+
+	}
+
+	&__list-link {
+		text-decoration: none;
+		color: black;
+		padding: 15px 20px;
+		background-color: lighten(green, 20%);
+		text-transform: uppercase;
+		transition: all .2s ease;
+		display: block;
+
+		&:hover {
+			background-color: lighten(green, 50%);
+		}
+	}
+
+	&__mobile-btn {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include square(40px);
+		padding: 5px;
+		position: absolute;
+		$position: 20px;
+		top: $position;
+		right: $position;
+
+		&.open {
+			justify-content: center;
+
+			span {
+				transform-origin: center;
+			}
+
+			span:first-child {
+				transform: rotate(-45deg);
+				position: relative;
+				top: 3px;
+			}
+
+			span:last-child {
+				transform: rotate(45deg);
+			}
+
+			span:nth-child(2) {
+				display: none;
+			}
+
+		}
+
+		@media all and (min-width: 992px) {
+			display: none;
+		}
+
+		span {
+			display: block;
+			width: 100%;
+			border-bottom: 3px solid black;
+		}
+	}
+}
+
+.section {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	h2 {
+		font-size: 5rem;
+		text-transform: uppercase;
+	}
+}
+
+@each $section, $color in $bg_colors {
+	.#{$section}{
+		background-color: $color;
+	}
+}
+
+li {
+	font-size: 5rem;
+}

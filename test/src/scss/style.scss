@@ -1,0 +1,31 @@
+@import 'vars';
+
+.border {
+	border-right: 1px solid black;
+}
+
+.section-about {
+	background-color: orange;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		max-width: 50%;
+		background: url(https://helpx.adobe.com/ca/stock/how-to/visual-reverse-image-search/_jcr_content/main-pars/image.img.jpg/visual-reverse-image-search-v2_1000x560.jpg) no-repeat 100% 0;
+		background-size: cover;
+	}
+
+	&__content {
+		min-height: 70vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 50px;
+	}
+}
