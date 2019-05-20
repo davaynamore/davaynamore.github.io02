@@ -2,8 +2,6 @@
 		'use strict';
 
 		function StorageHelper(){
-			this.storage = localStorage;
-
 			this.get = (key) => {
 				return JSON.parse(localStorage.getItem(key));
 			}
