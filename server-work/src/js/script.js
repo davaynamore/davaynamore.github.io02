@@ -1,13 +1,27 @@
 	;(function(){
 		'use strict';
 
+		function StorageHelper(){
+			this.storage = localStorage;
+
+			this.get = (key) => {
+				return JSON.parse(localStorage.getItem(key));
+			}
+			this.set = (key, value) => {
+				localStorage.setItem(key, JSON.stringify(value));
+			}
+		}
+
+		const Storage = new StorageHelper();
 
 		const PRODUCTS_NODE = document.querySelector('.products');
 
-		let event = new Event('productsReady'); // создаём собственное событие о готовности списка продуктов
+		const PRODUCTS_READY_EVENT_NAME = 'productsReady';
 
-		const createProductList = () => { // функция создающая списоке продуктов из локального хранилища
-			const productsList = JSON.parse(localStorage.getItem('products'));
+		let event = new Event(PRODUCTS_READY_EVENT_NAME); // создаём собственное событие о готовности списка продуктов
+
+		const createProductList = () => { // функция создающая список продуктов из локального хранилища
+			const productsList = Storage.get('products');
 			productsList.forEach(product => {
 				const item = document.createElement('li');
 				item.innerHTML = `<span>${product.name} ${product.price} ${product.category}</span>`;
@@ -15,7 +29,7 @@
 			});
 		};
 
-		document.addEventListener('productsReady', createProductList); // вешаем слушатель события Готовности продуктового списка на документ
+		document.addEventListener(PRODUCTS_READY_EVENT_NAME, createProductList); // вешаем слушатель события Готовности продуктового списка на документ
 
 		const PRODUCTS_LIST_NODE = document.querySelector('.products');
 		const xhr = new XMLHttpRequest();
@@ -23,13 +37,15 @@
 		xhr.onreadystatechange  = () => {
 			if(xhr.readyState  !== 4) return;
 			const data = JSON.parse(xhr.responseText);
-			localStorage.setItem('products', JSON.stringify(data.products));
+			Storage.set('products', data.products);
 			document.dispatchEvent(event); // инициируем событие Готовности списка продуктов
 		}
 
 		xhr.open('GET','http://my-json-server.typicode.com/davaynamore/fakeserver/db', true);
+
 		xhr.send();
 
+		// FETCH VERSION
 		// const getProducts = (url) => {
 		// 	return fetch(url);
 		// }
@@ -45,7 +61,7 @@
 
 		// 		response.json()
 		// 		.then(function(data) {
-		// 			localStorage.setItem('products', JSON.stringify(data.products));
+		// 			Storage.set('products', data.products);
 		// 			document.dispatchEvent(event); // инициируем событие Готовности списка продуктов
 		// 		});
 		// 	}
