@@ -1,0 +1,14 @@
+<%- include('menu'); -%>
+
+<% let newsArr = [{id: 1, title: 'news1', text: 'lorem100'}, {id: 2, title: 'news2', text: 'lorem100'}, {id: 3, title: 'news3', text: 'lorem100'}] %>
+
+	<ul class="news">
+		<% newsArr.forEach((newsItem, i) => { %>
+		<li>
+			<div class="news__item">
+				<h2><%= newsItem.title %></h2>
+				<p><%= newsItem.text %></p>
+			</div>
+		</li>
+		<% }); %>
+	</ul>
