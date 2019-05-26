@@ -1,9 +1,8 @@
 ;(function(){
 
-	const menuContentEventName = 'menuReady';
-	const menuContentEvent = new Event(menuContentEventName);
-
-	let productsBase = null;
+	const productsBaseEventName = 'menuReady';
+	const productsBaseEvent = new Event(productsBaseEventName);
+	const productBase = null;
 
 	function StorageHelper(){
 		this.storage = localStorage;
@@ -20,33 +19,6 @@
 	}
 
 	const Storage = new StorageHelper();
-	
-
-	const getMenuContent = (url) => {
-		return fetch(url);	
-	}
-
-	getMenuContent('http://my-json-server.typicode.com/davaynamore/fakeserver/db')
-	.then(  
-		function(response) {  
-			if (response.status !== 200) {  
-				console.log(`Looks like there was a problem. Status Code: ${response.status}`); 
-				return;  
-			}
-
-
-			response.json()
-			.then(function(data) {
-				const {footerMenu, menu} = data;
-				Storage.set('footer_menu', footerMenu);
-				Storage.set('header_menu', menu);
-				document.dispatchEvent(menuContentEvent);
-			});  
-		}  
-		)  
-	.catch(function(err) {  
-		console.log('Fetch Error :-S', err);  
-	});
 
 	const getProducts = (url) => {
 		return fetch(url);	
@@ -64,7 +36,9 @@
 			response.json()
 			.then(function(data) {
 				const {products} = data;
-				productsBase = products;
+				console.log(products);
+				Storage.set('products_offer', products);
+				document.dispatchEvent(productsBaseEvent);
 			});  
 		}  
 		)  
@@ -73,12 +47,9 @@
 	});
 
 
-	document.addEventListener(menuContentEventName, () => {
-		const headerMenu = Storage.get('header_menu');
-		const footerMenu = Storage.get('footer_menu');
-		console.log(headerMenu);
-		console.log(footerMenu);
-	})
+	document.addEventListener(productsBaseEvent, () => {		
+		productBase = Storage.get('products_offer');
+	});
 
 
 })();
