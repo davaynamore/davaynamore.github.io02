@@ -18,3 +18,11 @@
 		object-fit: $object-fit;
 	} 
 }
+
+@mixin text-styling($size: 1rem, $color: black, $weight: 400) {
+ font: {
+   size: $size;
+   weight: $weight;
+ }
+ color: $color;
+}

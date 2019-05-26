@@ -1,8 +1,11 @@
 ;(function(){
 
-	const productsBaseEventName = 'menuReady';
+	const productsBaseEventName = 'productBaseReady';
 	const productsBaseEvent = new Event(productsBaseEventName);
-	const productBase = null;
+
+	const readyToUseName = 'readyToUse';
+	const readyToUseEvent = new Event(readyToUseName);
+	let productBase = null;
 
 	function StorageHelper(){
 		this.storage = localStorage;
@@ -21,35 +24,51 @@
 	const Storage = new StorageHelper();
 
 	const getProducts = (url) => {
-		return fetch(url);	
+		return fetch(url);
 	}
 
 	getProducts('http://my-json-server.typicode.com/davaynamore/fakeserver/db')
-	.then(  
-		function(response) {  
-			if (response.status !== 200) {  
+	.then(
+		function(response) {
+			if (response.status !== 200) {
 				console.log(`Looks like there was a problem. Status Code: ${response.status}`); 
-				return;  
+				return;
 			}
-
 
 			response.json()
 			.then(function(data) {
 				const {products} = data;
-				console.log(products);
 				Storage.set('products_offer', products);
 				document.dispatchEvent(productsBaseEvent);
-			});  
-		}  
-		)  
-	.catch(function(err) {  
-		console.log('Fetch Error :-S', err);  
+			});
+		}
+		)
+	.catch(function(err) {
+		console.log('Fetch Error :-S', err);
 	});
 
-
-	document.addEventListener(productsBaseEvent, () => {		
+	const getProductsFromStorage = () => {
 		productBase = Storage.get('products_offer');
+		document.dispatchEvent(readyToUseEvent);
+	}
+
+	const readyForShow = () => {
+		const layout = document.querySelector('.layout');
+		// layout.classList.add('hidden');
+	}
+
+	document.addEventListener(productsBaseEventName, getProductsFromStorage);
+	document.addEventListener(readyToUseName, readyForShow);
+
+	const carouselItems = document.querySelectorAll('.carousel-item');
+	Array.from(carouselItems).forEach((el, i) => {
+		if(i === 0) el.classList.add('active');
 	});
+	const bullets = document.querySelectorAll('.carousel-bullet');
+	Array.from(bullets).forEach((el, i) => {
+		if(i === 0) el.classList.add('active');
+	});
+
 
 
 })();

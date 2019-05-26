@@ -1,0 +1,83 @@
+* {
+	padding: 0;
+	margin: 0;
+	transition: all .2s ease;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	font-family: $font-main;
+	background: $corp-aqua url('#{$img-path}/pattern.png') repeat;
+	position: relative;
+}
+
+a {
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.product-card-title,
+.product-card-btn {
+	font-family: $font-titles;
+}
+
+.product-card-title {
+	color: $text-grey;
+	line-height: 1;
+	font-size: 27px;
+	font-weight: 600;
+}
+
+.product-card-btn {
+	font-size: 19px;
+	color: $white;
+	padding: 5px 15px;
+	border-radius: 5px;
+	background-color: $active-green;
+
+	&:hover {
+		color: $white;
+		background-color: darken($active-green, 10%);
+	}
+}
+
+body {
+	overflow: hidden;
+	// filter: blur(30px);
+}
+
+.layout {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba($black, .9);
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&.hidden {
+		display: none;
+	}
+
+	.spinner {
+		position: relative;
+		@include square(60px);
+		border: 3px solid $corp-aqua;
+		animation: spin 2s liner infinite;
+		transform-origin: center;
+	}
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

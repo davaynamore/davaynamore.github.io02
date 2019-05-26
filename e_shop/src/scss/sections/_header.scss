@@ -1,0 +1,90 @@
+.aditii-header {
+	background-color: $white;
+
+	&__logo {
+		@include text-styling(49px, $corp-aqua);
+		font-family: $font-logo;
+
+		&:hover {
+			color: $corp-aqua;
+		}
+	}
+
+	&__search {
+		display: flex;
+		position: relative;
+
+		$size: 36px;
+
+		[type="text"]{
+			width: 100%;
+			border-radius: 1px;
+			border: 1px solid $border-grey;
+			padding: 5px;
+			max-height: $size;
+		}
+
+		[type="submit"]{
+			position: absolute;
+			right: 0;
+			top: 0;
+			border: none;
+			background: transparent url('#{$img-path}/search-solid.svg') no-repeat center/80%;
+			display: flex;
+			@include square(100%);
+			max-width: $size;
+		}
+	}
+
+	.shop-cart {
+		display: inline-flex;
+		align-items: center;
+
+		.fa-shopping-basket {
+			@include square(40px);
+			@include text-styling(2rem, $corp-aqua);
+			margin-right: 10px;
+		}
+
+		&__counter {
+			display: inline-flex;
+			@include text-styling(33px, $text-grey, bold);
+			font-family: $font-titles;
+			line-height: 1;
+		}
+	}
+
+	.navigation {
+		background-color: $menu-bg;
+		padding: 10px 0;
+		box-shadow: 1px 1px 3px rgba($black, 0.08);
+	}
+
+	&__menu {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		margin: 0;
+	}
+
+	&__menu-item {
+		border-right: 1px solid $white;
+
+		&:last-child {
+			border-right: none;			
+		}
+	}
+
+	&__menu-link {
+		display: block;
+		@include text-styling(21px, $white, bold);
+		text-transform: uppercase;
+		padding: 0 20px;
+		font-family: $font-titles;
+		line-height: 1;
+
+		&:hover {
+			color: darken($active-green, 10%);
+		}
+	}
+}
