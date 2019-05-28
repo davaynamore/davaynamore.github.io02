@@ -3,8 +3,8 @@
 	const productsBaseEventName = 'productBaseReady';
 	const productsBaseEvent = new Event(productsBaseEventName);
 
-	const readyToUseName = 'readyToUse';
-	const readyToUseEvent = new Event(readyToUseName);
+	const readyToUseProductsBaseName = 'readyToUse';
+	const readyToUseEvent = new Event(readyToUseProductsBaseName);
 	let productBase = null;
 
 	function StorageHelper(){
@@ -31,13 +31,13 @@
 	.then(
 		function(response) {
 			if (response.status !== 200) {
-				console.log(`Looks like there was a problem. Status Code: ${response.status}`); 
+				console.log(`Looks like there was a problem. Status Code: ${response.status}`);
 				return;
 			}
 
 			response.json()
 			.then(function(data) {
-				const {products} = data;
+				let {products} = data;
 				Storage.set('products_offer', products);
 				document.dispatchEvent(productsBaseEvent);
 			});
@@ -54,11 +54,9 @@
 
 	const readyForShow = () => {
 		const layout = document.querySelector('.layout');
-		// layout.classList.add('hidden');
+		document.body.classList.remove('fixed');
+		layout.classList.add('hidden');
 	}
-
-	document.addEventListener(productsBaseEventName, getProductsFromStorage);
-	document.addEventListener(readyToUseName, readyForShow);
 
 	const carouselItems = document.querySelectorAll('.carousel-item');
 	Array.from(carouselItems).forEach((el, i) => {
@@ -68,6 +66,9 @@
 	Array.from(bullets).forEach((el, i) => {
 		if(i === 0) el.classList.add('active');
 	});
+
+	document.addEventListener(productsBaseEventName, getProductsFromStorage);
+	document.addEventListener(readyToUseProductsBaseName, readyForShow);
 
 
 

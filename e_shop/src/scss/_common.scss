@@ -12,6 +12,10 @@ body {
 	font-family: $font-main;
 	background: $corp-aqua url('#{$img-path}/pattern.png') repeat;
 	position: relative;
+
+	&.fixed {
+		overflow: hidden;
+	}
 }
 
 a {
@@ -46,38 +50,90 @@ a {
 	}
 }
 
-body {
-	overflow: hidden;
-	// filter: blur(30px);
-}
-
 .layout {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba($black, .9);
-	z-index: 10;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 10;
 
 	&.hidden {
 		display: none;
 	}
 
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 11;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $active-green;
+	}
+
 	.spinner {
-		position: relative;
 		@include square(60px);
-		border: 3px solid $corp-aqua;
-		animation: spin 2s liner infinite;
-		transform-origin: center;
+		position: relative;
+		z-index: 12;
+		color: $white;
+
+		&::after {
+			content: "Loading...";
+			font-weight: bold;
+			position: absolute;
+			bottom: -50%;
+		}
+
+		span {
+			border: 4px solid currentColor;
+			border-radius: 50%;
+			border-right-color: transparent;
+			display: block;
+			position: absolute;
+			animation: 2s infinite linear spin;
+
+			&:first-child {
+				@include square(60px);
+			}
+
+			&:nth-child(2) {
+				@include square(40px);
+				top: 18%;
+				left: 17%;
+				animation-name: spin-reverse;
+			}
+
+			&:last-child {
+				@include square(20px);
+				top: 34%;
+				left: 34%;
+			}
+		}
 	}
 }
 
 @keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	};
+
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+
+@keyframes spin-reverse {
+	0% {
+		transform: rotate(0deg);
+	};
+
+	100% {
+		transform: rotate(-360deg);
 	}
 }
