@@ -27,7 +27,7 @@
 		return fetch(url);
 	}
 
-	getProducts('http://my-json-server.typicode.com/davaynamore/fakeserver/db')
+	getProducts('https://my-json-server.typicode.com/davaynamore/fakeserver/db')
 	.then(
 		function(response) {
 			if (response.status !== 200) {
