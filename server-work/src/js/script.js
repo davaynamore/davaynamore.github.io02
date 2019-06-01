@@ -91,6 +91,7 @@
 			} else if(count >= 20) {
 				count *= 3;
 			}
+			const timing = 1;
 			let i = 1;
 			let interval = setTimeout(function counter(){
 				targetNode.innerText = i;
@@ -100,8 +101,8 @@
 					clearInterval(interval);
 					return;
 				}
-				interval = setTimeout(counter, 1);
-			}, 1);
+				interval = setTimeout(counter, timing);
+			}, timing);
 		}
 
 		fakeCounter(tourists);

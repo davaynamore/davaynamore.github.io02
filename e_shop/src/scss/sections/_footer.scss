@@ -1,0 +1,10 @@
+.aditii-footer {
+	background-color: $footer-bg;
+
+	&__copyrights {
+		color: $white;
+		text-align: center;
+		margin: 0;
+		padding: 10px 0;
+	}
+}

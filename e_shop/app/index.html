@@ -7,7 +7,8 @@
 	<link rel="shortcut icon" type="image/x-icon" href="fav/favicon.ico">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/style.css"></head>
 <body class="fixed">
 <div class="layout">
@@ -88,7 +89,7 @@
 								<a href="#" class="aditii-header__menu-link">contact us</a>
 							</li>
 						
-					</ul>	
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -213,29 +214,44 @@
 </section>
 <section class="aditii-product-slider">
 	<div class="container">
-		<div class="row">
-			<div class="col-4">
-				<div class="product-slider">
-					<div class="product-slider__card">
-						<div class="img-wrapper">
-							<img src="./img/cat-item1.jpg" alt="product">
-						</div>
-						<div class="product-slider__card-info">
-							<h5 class="product-card-title">
-								branded shoes
-							</h5>
-							<a class="product-card-btn" href="#">shop</a>
-						</div>
-					</div>
+		<div class="product-slider owl-carousel"></div>
+	</div>
+</section>
+<section class="products-grid">
+	<div class="section-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="section-header__title">featured products</h2>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="products-grid__content">
+		<div class="container">
+			<div id="grid" class="row">
+			</div>
+		</div>
+	</div>
 </section>
+<section class="bottom-menu">
+	<div class="container top">
+		<div id="bottom-menu-container" class="row"></div>
+	</div>
+</section>
+<footer class="aditii-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p class="aditii-footer__copyrights">Copyright © 2013 Css Author</p>
+			</div>
+		</div>
+	</div>
+</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>

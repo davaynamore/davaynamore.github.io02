@@ -25,24 +25,27 @@ a {
 	}
 }
 
-.product-card-title,
-.product-card-btn {
-	font-family: $font-titles;
+.section-header {
+	padding: 20px 0;
+
+	&__title {
+		margin: 0;
+		@include corp-styling-text(31px);
+	}
 }
 
 .product-card-title {
-	color: $text-grey;
 	line-height: 1;
-	font-size: 27px;
-	font-weight: 600;
+	@include corp-styling-text(27px, $text-grey);
 }
 
 .product-card-btn {
-	font-size: 19px;
-	color: $white;
 	padding: 5px 15px;
+	border: none;
 	border-radius: 5px;
 	background-color: $active-green;
+	@include corp-styling-text(19px);
+	font-weight: 400;
 
 	&:hover {
 		color: $white;
@@ -137,3 +140,4 @@ a {
 		transform: rotate(-360deg);
 	}
 }
+

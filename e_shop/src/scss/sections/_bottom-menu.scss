@@ -1,0 +1,35 @@
+.bottom-menu {
+	background-color: $bottom-menu;
+	padding: 40px 0;
+
+	&__item {
+
+	}
+
+	&__item-title {
+		@include corp-styling-text(27px);
+		margin: 0 0 25px;
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__list-item {
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__list-link {
+		color: $white;
+		font-size: 15px;
+		text-transform: capitalize;
+
+		&:hover {
+
+		}
+	}
+}
