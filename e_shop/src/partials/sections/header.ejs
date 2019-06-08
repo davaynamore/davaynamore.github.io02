@@ -1,0 +1,42 @@
+<header class="aditii-header">
+	<div class="container">
+		<div class="row py-4 align-items-center">
+			<div class="col-3 text-center">
+				<a href="/" class="aditii-header__logo">Aditii</a>
+			</div>
+			<div class="col-6">
+				<form action="" class="aditii-header__search">
+					<input type="text" name="search">
+					<input type="submit" value="" id="submit">	
+				</form>
+			</div>
+			<div class="col-3 text-center">
+				<a href="#" class="shop-cart">
+					<%- include('../svg/shopping-cart.html'); -%>
+					<span class="shop-cart__counter">
+						<span class="js-currency">$</span>
+						<span class="js-summ">0</span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<% const topMenu = ["home","sale","handbags","wallets","accessories","mens store","shoes","vintage","services","contact us"]%>
+
+	<nav class="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="aditii-header__menu">
+						<% topMenu.forEach(item => { %>
+							<li class="aditii-header__menu-item">
+								<a href="#" class="aditii-header__menu-link"><%=item %></a>
+							</li>
+						<% }) %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>

@@ -22,6 +22,22 @@
 		if(i === 0) el.classList.add('active');
 	});
 
+	function StorageHelper(){
+		this.storage = localStorage;
+
+		this.get = (key) => {
+			return JSON.parse(localStorage.getItem(key));
+		}
+		this.set = (key, value) => {
+			localStorage.setItem(key, JSON.stringify(value));
+		}
+		this.remove = (key) => {
+			localStorage.removeItem(key);
+		}
+	}
+
+	const Storage = new StorageHelper();
+
 	const initProductSlider = () => {
 		const carousel = $('.product-slider');
 		carousel.owlCarousel({
@@ -37,6 +53,7 @@
 	}
 
 	const createSliderDom = () => {
+		productBase = Storage.get('products_offer');
 		productBase.forEach((product, idx) => {
 
 			if(product.id === 9) return;
