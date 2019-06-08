@@ -7,8 +7,13 @@
 	const readyToUseProductsSliderName = 'readyToUseSlider';
 	const readyToUseProductSliderEvent = new Event(readyToUseProductsSliderName);
 
+	const addedToCartEventName = 'addedToCart';
+	const addedToCartEvent = new Event(addedToCartEventName);
+
 	let productBase = null;
 	let footerMenu = null;
+	const totalAmountNode = document.querySelector('.js-summ');
+	let totalAmount = parseInt(totalAmountNode.innerText);
 	const productSlider = document.querySelector('.product-slider');
 	const gridNode = document.getElementById('grid');
 
@@ -184,25 +189,34 @@
 				const price = e.target.elements.price.value;
 				const cart = Storage.get('cart');
 
-				for(let p in cart) {
-					if(p === art) {
-						cart[art].price += price;
-						cart[art].quantity++;
-					} else {
-						cart[art].price = price;
-						cart[art].quantity = 1;
+				if(cart[art]) {
+					cart[art].quatnity += 1;
+				} else {
+					cart[art] = {
+						price: price,
+						quatnity: 1
 					}
 				}
-
-				console.log(cart);
 				Storage.set('cart', cart);
+				document.dispatchEvent(addedToCartEvent);
 			})
 		});
+	}
+
+	function setPriceToCart() {
+		const total = [];
+		const cart = Storage.get('cart');
+		for(let product in cart) {
+			total.push(cart[product].price * cart[product].quatnity);
+		}
+
+		totalAmountNode.innerText = totalAmount + total.reduce((accumulator, currentValue) => accumulator + currentValue);
 	}
 
 	document.addEventListener(productsBaseEventName, getProductsFromStorage);
 	document.addEventListener(readyToUseProductsBaseName, readyForShow);
 	document.addEventListener(readyToUseProductsSliderName, initProductSlider);
+	document.addEventListener(addedToCartEventName, setPriceToCart);
 
 })();
 
