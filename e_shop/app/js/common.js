@@ -9,6 +9,9 @@
 	let productBase = null;
 	let footerMenu = null;
 
+	const totalAmountNode = document.querySelector('.js-summ');
+	let totalAmount = parseInt(totalAmountNode.innerText);
+
 	function StorageHelper(){
 		this.storage = localStorage;
 
@@ -39,12 +42,17 @@
 
 			response.json()
 			.then(function(data) {
-				let {products, footerMenu} = data;
-				Storage.set('products_offer', products);
+				if(!Storage.get('products_offer')) {
+					let {products} = data;
+					Storage.set('products_offer', products);
+				};
+
+				let {footerMenu} = data;
 				Storage.set('footer_menu', footerMenu);
 
 				const cart = Storage.get('cart');
 				if(!cart) Storage.set('cart', {});
+
 				document.dispatchEvent(productsBaseEvent);
 			});
 		}
@@ -94,12 +102,26 @@
 		});
 	}
 
+	function getTotalFromCart(){
+		const total = [];
+		const cart = Storage.get('cart');
+		for(let product in cart) {
+			total.push(cart[product].price * cart[product].quatnity);
+		}
+		return total.reduce((accumulator, currentValue) => accumulator + currentValue);
+	}
+
+	function cartInit() {
+		totalAmountNode.innerText = getTotalFromCart();
+	}
+
 
 
 	document.addEventListener(productsBaseEventName, getProductsFromStorage);
 	document.addEventListener(readyToUseProductsBaseName, readyForShow);
 	document.addEventListener(readyForShowName, () => {
 		createBottomMenu();
+		cartInit();
 	});
 
 

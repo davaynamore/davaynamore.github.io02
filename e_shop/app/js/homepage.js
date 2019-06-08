@@ -8,10 +8,12 @@
 
 	const addedToCartEventName = 'addedToCart';
 	const addedToCartEvent = new Event(addedToCartEventName);
-	const totalAmountNode = document.querySelector('.js-summ');
-	let totalAmount = parseInt(totalAmountNode.innerText);
+
 	const productSlider = document.querySelector('.product-slider');
 	const gridNode = document.getElementById('grid');
+
+	const totalAmountNode = document.querySelector('.js-summ');
+	let totalAmount = parseInt(totalAmountNode.innerText);
 
 	const carouselItems = document.querySelectorAll('.carousel-item');
 	Array.from(carouselItems).forEach((el, i) => {
@@ -68,7 +70,10 @@
 			<h5 class="product-card-title">
 			${product.title}
 			</h5>
-			<a class="product-card-btn" href="#">shop</a>
+			<form class="to_card">
+			<input type="hidden" value="${product.id}" name="art">
+			<input type="submit" class="product-card-btn" value="shop">
+			</form>
 			</div>
 			`;
 			productSlider.appendChild(sliderItem);
@@ -129,15 +134,35 @@
 		});
 	}
 
-	function setPriceToCart() {
+	function getTotalFromCart(){
 		const total = [];
 		const cart = Storage.get('cart');
 		for(let product in cart) {
 			total.push(cart[product].price * cart[product].quatnity);
 		}
-
-		totalAmountNode.innerText = totalAmount + total.reduce((accumulator, currentValue) => accumulator + currentValue);
+		return total.reduce((accumulator, currentValue) => accumulator + currentValue);
 	}
+
+	function setPriceToCart() {
+		totalAmountNode.innerText = totalAmount + getTotalFromCart();
+	}
+
+	function cartInit() {
+		totalAmountNode.innerText = getTotalFromCart();
+	}
+
+	function addListenersToSliderBtn() {
+		const forms = document.querySelectorAll('.to_card');
+		Array.from(forms).forEach(form => {
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const art = form.elements.art.value;
+				Storage.set('chosen_product', art);
+				location.assign("http://localhost:3000/index.html");
+			})
+		})
+	}
+
 
 	document.addEventListener(readyToUseProductsSliderName, initProductSlider);
 	document.addEventListener(addedToCartEventName, setPriceToCart);
@@ -146,6 +171,10 @@
 		createSliderDom();
 		createProductsGrid();
 		formSubmit();
+		setPriceToCart();
+		addListenersToSliderBtn();
 	});
+
+
 
 })();
